@@ -2,14 +2,14 @@
 def janken
 puts "じゃんけん..."
 puts "n[1]グー/n[2]チョキ/n[3]パー/n[4]戦わない"
-player_hand = gets.to_i
+player_hand = gets.chomp.to_i
 program_hand = rand(3)
 
 if player_hand == 0 or player_hand >= 5
     puts "n[1]グー/n[2]チョキ/n[3]パー/n[4]戦わないのいずれかを入力してください"
     janken
-    end
-player_jankens = ["アルファベット","グー","チョキ","パー"]
+end
+player_jankens = ["アルファベット","グー","チョキ","パー","戦わない"]
 program_jankens = ["グー","チョキ","パー"]
 
 puts "あなたの手:#{player_jankens[player_hand]},相手の手:#{program_jankens[program_hand]}"
@@ -22,18 +22,20 @@ elsif(player_hand == 1 && program_hand == 1)||(player_hand == 2 && program_hand 
     puts "あなたの勝ちです"
     acchi_muite_win
     
-    
-elsif player_hand == 4
-    puts "終了します"
-    return false
-
-else
+elsif (player_hand == 1 && program_hand == 2)||(player_hand == 2 && program_hand == 1)||(player_hand == 3 && program_hand == 2)
     puts "あなたの負けです"
     acchi_muite_lose
+        
+elsif player_hand == 4
+    puts "終了"
+
+   
     
+end  
+end
+
+
     
-end
-end
 
 def acchi_muite_win
     puts "あっち向いて-"
@@ -88,14 +90,15 @@ def acchi_muite_win
             end
         end
     
-    next_game = true
-    while next_game
-    next_game = janken
+        next_game = true
+        while next_game
+        next_game = janken
+        end    
 
     
 
 
 
     
-end
+
 
