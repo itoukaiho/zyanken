@@ -43,57 +43,57 @@ def acchi_muite_win
     player_direction = gets.chomp.to_i
     program_direction = rand(4)
 
-    if player_direction == 0 or player_direction >= 5
-       puts "1(上)2(下)3(左)4(右)いずれかを入力してください"
-       acchi_muite_win
+if player_direction == 0 or player_direction >= 5
+    puts "1(上)2(下)3(左)4(右)いずれかを入力してください"
+    acchi_muite_win
        
-       end
-        player_directions = ["アルファベット","上","下","左","右"]
-       program_directions = ["上","下","左","右"]
-       puts "あなたの向き:#{player_directions[player_direction]},相手の向き:#{program_directions[program_direction]}"
+end
+player_directions = ["アルファベット","上","下","左","右"]
+program_directions = ["上","下","左","右"]
+puts "あなたの向き:#{player_directions[player_direction]},相手の向き:#{program_directions[program_direction]}"
        
-       if (player_direction == 1 && program_direction == 0)||(player_direction == 2 && program_direction == 1)||(player_direction == 3 && program_direction == 2)||(player_direction == 4 && program_direction == 3)
-        puts "あなたの勝ちです"
+if (player_direction == 1 && program_direction == 0)||(player_direction == 2 && program_direction == 1)||(player_direction == 3 && program_direction == 2)||(player_direction == 4 && program_direction == 3)
+    puts "あなたの勝ちです"
      
         
-        else
-            puts "残念！"
-            janken
+else
+    puts "残念！"
+    janken
             
-        end
-    end
+end
+end
             
-    def acchi_muite_lose
-        puts "あっち向いて-"
-        puts "1(上)2(下)3(左)4(右)"
-        player_direction = gets.chomp.to_i
-        program_direction = rand(4)
+def acchi_muite_lose
+puts "あっち向いて-"
+puts "1(上)2(下)3(左)4(右)"
+player_direction = gets.chomp.to_i
+program_direction = rand(4)
     
-        if player_direction == 0 or player_direction >= 5
-           puts "1(上)2(下)3(左)4(右)いずれかを入力してください"
-           acchi_muite_lose
+if player_direction == 0 or player_direction >= 5
+    puts "1(上)2(下)3(左)4(右)いずれかを入力してください"
+    acchi_muite_lose
            
-           end
-           player_directions = ["アルファベット","上","下","左","右"]
-           program_directions = ["上","下","左","右"]
-           puts "あなたの向き:#{player_directions[player_direction]},相手の向き:#{program_directions[program_direction]}"
+end
+player_directions = ["上","下","左","右"]
+program_directions = ["上","下","左","右"]
+puts "あなたの向き:#{player_directions[player_direction]},相手の向き:#{program_directions[program_direction]}"
            
        
-        if (player_direction == 1 && program_direction == 0)||(player_direction == 2 && program_direction == 1)||(player_direction == 3 && program_direction == 2)||(player_direction == 4 && program_direction == 3)
-            puts "あなたの負けです"
+if (player_direction == 1 && program_direction == 0)||(player_direction == 2 && program_direction == 1)||(player_direction == 3 && program_direction == 2)||(player_direction == 4 && program_direction == 3)
+    puts "あなたの負けです"
             
            
-            else
-                puts "回避！"
-                janken
+else
+    puts "回避！"
+    janken
                 
-            end
-        end
+end
+end
     
-        next_game = true
-        while next_game
-        next_game = janken
-        end    
+next_game = true
+while next_game
+next_game = janken
+end    
 
     
 
